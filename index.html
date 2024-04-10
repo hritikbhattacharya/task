@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h2>Tax Calculator</h2>
+        <form id="taxForm">
+          <div class="input-group">
+            <label for="grossIncome"
+              >Enter Gross Annual Income:
+              <i
+                class="info-icon"
+                data-tooltip="This is your total income before taxes and deductions."
+                >i</i
+              ></label
+            >
+
+            <input type="number" id="grossIncome" required />
+            <span
+              class="error-icon"
+              data-error="Please enter a valid number."
+              id="grossIncomeError"
+            ></span>
+          </div>
+          <div class="input-group">
+            <label for="extraIncome"
+              >Enter Extra Income:
+              <i
+                class="info-icon"
+                data-tooltip="This is any additional income you have received."
+                >i</i
+              >
+            </label>
+            <input type="number" id="extraIncome" required />
+            <span
+              class="error-icon"
+              data-error="Please enter a valid number."
+              id="grossIncomeError"
+            ></span>
+          </div>
+          <div class="input-group">
+            <label for="ageGroup"
+              >Enter Age Group:
+              <i
+                class="info-icon"
+                data-tooltip="Select your age group. This may affect your tax calculation."
+                >i</i
+              >
+            </label>
+            <select id="ageGroup" required>
+              <option value="<40">less than 40</option>
+              <option value="≥40 & <60">between 40 to 60</option>
+              <option value="≥60">greater than 60</option>
+            </select>
+            <span
+              class="error-icon"
+              data-error="Please enter a valid number."
+              id="grossIncomeError"
+            ></span>
+          </div>
+          <div class="input-group">
+            <label for="deductions"
+              >Enter Total Applicable Deductions:
+              <i
+                class="info-icon"
+                data-tooltip="This is the total amount of deductions you can claim."
+                >i</i
+              >
+            </label>
+            <input type="number" id="deductions" required />
+            <span
+              class="error-icon"
+              data-error="Please enter a valid number."
+              id="grossIncomeError"
+            ></span>
+          </div>
+          <button type="submit" class="submitButton">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h2>Your overall income will be</h2>
+        <div id="taxResult" class="taxResult"></div>
+        <p>after tax deductions</p>
+        <span class="close">close</span>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
